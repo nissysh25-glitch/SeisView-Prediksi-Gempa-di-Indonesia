@@ -1,8 +1,4 @@
 .desktop {
-  background-image: url("Indonesia-3.jpg");
-  background-size: cover;
-  background-position: center 30%;
-  background-repeat: no-repeat;
   background-color: #ffffff;
   border: 0px solid;
   border-color: transparent;
@@ -289,7 +285,15 @@ body {
   align-items: center;
   cursor: zoom-out;
 }
-
+.desktop .indonesia {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
 .fullscreen-overlay img {
   max-width: 95vw;
   max-height: 95vh;
