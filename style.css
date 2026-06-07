@@ -342,3 +342,11 @@ body {
   z-index: -1;
 }
 
+.Editor {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  font-family: "Space Grotesk-Regular", Helvetica;
+}
