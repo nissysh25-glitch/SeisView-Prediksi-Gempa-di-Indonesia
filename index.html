@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<title>SeisView: Prediksi Gempa Indonesia</title>
+<link rel="stylesheet" href="globals.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="desktop">
+<div class="rectangle" aria-hidden="true"></div>
+<img class="indonesia" src="Indonesia-3.jpg" alt="" aria-hidden="true" />
+<div class="div" aria-hidden="true"></div>
+<header>
+<h1 class="SeisView-Text">SeisView</h1>
+</header>
+<section aria-labelledby="page-title">
+<h2 id="page-title" class="Indonesia-Text">INDONESIA</h2>
+</section>
+<nav aria-label="Main features">
+<a href="#" class="Prediksi-Persebaran-Text" onclick="openModal('modal-1')">Prediksi Persebaran Gempa</a>
+<a href="#" class="Prediksi-Magnitudo-Text" onclick="openModal('modal-2')">Prediksi Magnitudo Gempa</a>
+<a href="#" class="Informasi-Tambahan-Text" onclick="openModal('modal-3')">Informasi</a>
+</nav>
+
+<div class="modal" id="modal-1">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('modal-1')">✕</button>
+    <h2>Prediksi Persebaran Gempa</h2>
+    <img src="xgb_clf_map.png" alt="Persebaran Gempa" onclick="openFullscreen(this)" style="cursor:zoom-in" />
+    <p>Peta ini menunjukkan prediksi probabilitas terjadinya gempa bumi berkekuatan M5+ di seluruh wilayah Indonesia dalam 10 tahun ke depan menggunakan model XGBoost. Warna merah menunjukkan probabilitas tinggi (mendekati 100%), sedangkan warna hijau menunjukkan probabilitas rendah. Berdasarkan hasil prediksi, wilayah pesisir barat Sumatera, selatan Jawa, Sulawesi, dan Maluku merupakan zona dengan risiko gempa tertinggi, sesuai dengan pola tektonik aktif di Indonesia.</p>
+    <p>Peta ini dibuat menggunakan model XGBoost dengan pendekatan klasifikasi dan menghasilkan MAE sebesar 0.211 dan RMSE sebesar 0.302, menunjukkan tingkat kesalahan prediksi magnitudo yang cukup rendah.</p>
+  </div>
+</div>
+
+<div class="modal" id="modal-2">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('modal-2')">✕</button>
+    <h2>Prediksi Magnitudo Gempa</h2>
+    <img src="xgb_reg_map.png" alt="Magnitudo Gempa" onclick="openFullscreen(this)" style="cursor:zoom-in" />
+    <p>Peta ini menunjukkan prediksi seberapa besar ukuran magnitudo gempa bumi yang akan terjadi di seluruh wilayah Indonesia menggunakan model XGBoost dengan pendekatan regresi dan mampu menghasilkan MAE sebesar 0.189 dan RMSE sebesar 0.256, menunjukkan tingkat kesalahan prediksi magnitudo yang cukup rendah.</p>
+    <p>Warna merah pada peta menunjukkan gempa dengan kekuatan magnitudo yang tinggi, sementara warna hijau menunjukkan gempa dengan kekuatan magnitudo yang rendah.</p>
+    <p>Berdasarkan hasil prediksi, wilayah pesisir barat Sumatera, selatan Jawa, Sulawesi, dan Maluku mengindikasikan zona dengan risiko gempa bermagnitudo rendah, hal ini menunjukkan kemungkinan tipe gempa yang terjadi adalah gempa dangkal. Sementara itu area berwarna merah pada daerah sekitar timur laut sulawesi mengindikasikan zona dengan risiko gempa bermagnitudo cukup tinggi, hal ini menunjukkan kemungkinan tipe gempa yang terjadi adalah tipe gempa dalam.</p>
+  </div>
+</div>
+
+<div class="modal" id="modal-3">
+  <div class="modal-content">
+    <h2>Informasi Tambahan</h2>
+    <button class="modal-close" onclick="closeModal('modal-3')">✕</button>
+    <h3>Tentang SeisView</h3>
+    <p>SeisView adalah aplikasi berbasis web yang dirancang untuk memberikan prediksi tentang persebaran dan magnitudo gempa bumi di Indonesia. Aplikasi ini menggunakan model machine learning berbasis XGBoost untuk menganalisis data seismik dan memberikan informasi yang akurat tentang risiko gempa di wilayah Indonesia.</p>
+    <h3>Metode</h3>
+    <p>Metode yang digunakan dalam aplikasi ini adalah machine learning dengan algoritma XGBoost (Extreme Gradient Boosting) untuk memprediksi perkiraan terjadinya gempa dalam rentang waktu 10 tahun mendatang dan prediksi seberapa besar magnitudo gempa yang akan terjadi di wilayah Indonesia.</p>
+    <p>XGBoost adalah algoritma machine learning yang efektif digunakan untuk tugas regresi dan klasifikasi. Metode ini memiliki tingkat akurasi yang lebih tinggi, lebih efisien dan lebih mudah untuk diinterpretasi dibandingkan dengan metode LSTM (Long Short-Term Memory) ataupun metode Hawkes. </p>
+    <p>Metode XGBoost yag digunakan ini menggunakan dua pendekatan: regresi untuk memprediksi besar magnitudo gempa yang berpotensi terjadi dan klasifikasi untuk memprediksi probabilitas terjadinya gempa di berbagai wilayah.</p>
+    <h3>Sumber Data</h3>
+    <p>Data yang digunakan dalam aplikasi ini berasal dari USGS (United States Geological Survey) dimana data yang diambil yakni data gempa bumi yang tercatat dalam kurun waktu 10 tahun terakhir (2016-2026) yang terjadi di Indonesia.</p>
+    <h3 class="disclaimer-title">Disclaimer!!!</h3>
+    <p>Informasi yang disajikan dalam aplikasi ini bersifat prediktif dan tidak menjamin keakuratan hasil prediksi. Pengguna diharapkan untuk selalu waspada dan mengikuti informasi resmi dari lembaga meteorologi dan geologi terpercaya seperti Badan Meteorologi, Klimatologi, dan Geofisika, USGS (United States Geological Survey) dan lainnya.</p>
+  </div>
+</div>
+</main>
+
+<div class="fullscreen-overlay" id="fullscreen-overlay" onclick="closeFullscreen()">
+  <img id="fullscreen-img" src="" alt="" />
+</div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.add('active');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+  }
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', function(e) {
+      if (e.target === this) closeModal(this.id);
+    });
+  });
+  function openFullscreen(img) {
+    document.getElementById('fullscreen-img').src = img.src;
+    document.getElementById('fullscreen-overlay').classList.add('active');
+  }
+  function closeFullscreen() {
+    document.getElementById('fullscreen-overlay').classList.remove('active');
+  }
+</script>
+</body>
+</html>
