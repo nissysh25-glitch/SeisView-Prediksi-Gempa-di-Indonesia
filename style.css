@@ -1,0 +1,302 @@
+.desktop {
+  background-image: url("Indonesia-3.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  border: 0px solid;
+  border-color: transparent;
+  border-image: linear-gradient(
+      180deg,
+      rgba(4, 95, 134, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    )
+    1;
+  width: 100%;
+  min-width: 1440px;
+  min-height: 1024px;
+  position: relative;
+}
+
+.desktop .rectangle {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1024px;
+}
+
+.desktop .indonesia {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1024px;
+  aspect-ratio: 1.41;
+}
+
+.desktop .div {
+  background: radial-gradient(
+    50% 50% at 75% 50%,
+    rgba(3, 83, 116, 0.56) 0%,
+    rgba(232, 248, 255, 0.21) 0%,
+    rgba(3, 83, 116, 0.56) 61%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1024px;
+}
+
+.desktop .SeisView-Text {
+  position: absolute;
+  top: 25px;
+  left: 35px;
+  width: 276px;
+  font-family: "Space Grotesk-Bold", Helvetica;
+  font-weight: 700;
+  color: #fffcfc;
+  font-size: 64px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .Indonesia-Text {
+  position: absolute;
+  top: 459px;
+  left: 474px;
+  width: 491px;
+  font-family: "Space Grotesk-Bold", Helvetica;
+  font-weight: 700;
+  color: #fffcfc;
+  font-size: 96px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .Prediksi-Persebaran-Text {
+  position: absolute;
+  top: 865px;
+  left: 75px;
+  width: 391px;
+  font-family: "Space Grotesk-Regular", Helvetica;
+  font-weight: 400;
+  color: #fffcfc;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .Prediksi-Magnitudo-Text {
+  position: absolute;
+  top: 865px;
+  left: 564px;
+  width: 391px;
+  font-family: "Space Grotesk-Regular", Helvetica;
+  font-weight: 400;
+  color: #fffcfc;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .Informasi-Tambahan-Text {
+  position: absolute;
+  top: 865px;
+  left: 1049px;
+  width: 315px;
+  font-family: "Space Grotesk-Regular", Helvetica;
+  font-weight: 400;
+  color: #fffcfc;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+.desktop {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  min-width: unset;
+  min-height: unset;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.desktop header,
+.desktop section,
+.desktop nav {
+  display: contents;
+}
+
+.desktop .Prediksi-Persebaran-Text,
+.desktop .Prediksi-Magnitudo-Text,
+.desktop .Informasi-Tambahan-Text {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.desktop .Prediksi-Persebaran-Text:focus-visible,
+.desktop .Prediksi-Magnitudo-Text:focus-visible,
+.desktop .Informasi-Tambahan-Text:focus-visible {
+  outline: 2px solid #fffcfc;
+  outline-offset: 4px;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+.desktop .SeisView-Text {
+  font-size: 40px;  
+  top: 2.4%;
+  left: 2.4%;
+} 
+/* text-wrapper 1 untuk teks SeisView */
+
+.desktop .Indonesia-Text {
+  font-size: 80px;
+  top: 44.8%;
+  left: 32.9%;
+}
+/* text-wrapper 2 untuk teks INDONESIA */
+
+.desktop .Prediksi-Persebaran-Text {
+  font-size: 25px;  
+  top: 84.5%;
+  left: 5.2%;
+}
+/* text-wrapper 3 untuk teks Prediksi Persebaran Gempa */
+.desktop .Prediksi-Magnitudo-Text {
+  font-size: 25px;
+  top: 84.5%;
+  left: 39.2%;
+}
+/* text-wrapper 4 untuk teks Prediksi Magnitudo Gempa */
+
+.desktop .Informasi-Tambahan-Text {
+  font-size: 25px;
+  top: 84.5%;
+  left: 72.8%;
+}
+/* text-wrapper 5 untuk teks Informasi Tambahan */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+  overflow-y: auto;    
+  max-height: 80vh; 
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.modal-content h2 {
+  font-family: "Space Grotesk-Bold", Helvetica;
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #045f86;
+}
+.modal-content h3 {
+  font-size: 18px;
+  color: #045f86;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-family: "Space Grotesk-Bold", Helvetica;
+  text-align: left;
+}
+
+.modal-content h3.disclaimer-title {
+  color: #c0392b !important;
+  font-size: 25px !important;
+  text-align: center;
+}
+.modal-content p {
+ font-size: 16px;          /* ukuran teks */
+  color: #333;              /* warna teks */
+  line-height: 1.6;         /* jarak antar baris */
+  text-align: justify;      /* rata kiri-kanan */
+  font-family: "Space Grotesk-Regular", Helvetica;  /* font */
+  margin-bottom: 12px;      /* jarak antar paragraf */
+  padding: 0 10px;          /* mentok kiri-kanan */
+} /*intinya ini buat isi konten*/
+
+.modal-close {
+  position: absolute;
+  top: 12px; right: 16px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+.desktop .Prediksi-Persebaran-Text,
+.desktop .Prediksi-Magnitudo-Text,
+.desktop .Informasi-Tambahan-Text {
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.desktop .Prediksi-Persebaran-Text:hover,
+.desktop .Prediksi-Magnitudo-Text:hover,
+.desktop .Informasi-Tambahan-Text:hover {
+  background-color: rgba(5, 131, 148, 0.651);
+  border:#fffcfc solid 1px;
+}
+
+.fullscreen-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.fullscreen-overlay img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+}
+
+.fullscreen-overlay.active {
+  display: flex;
+}
+
